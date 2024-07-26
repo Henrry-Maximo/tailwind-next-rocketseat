@@ -12,3 +12,6 @@ export default function Home() {
     </div>
   );
 }
+
+// VALORES ARBITRÁRIOS:
+// [] -> EVITAR (USAR TAILWIND.CONFIG PARA INSERIR VALORES DIFERENTES)
