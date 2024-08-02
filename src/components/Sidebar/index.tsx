@@ -1,5 +1,4 @@
 import {
-  Search,
   BarChart,
   CheckSquare,
   Flag,
@@ -15,6 +14,7 @@ import { Logo } from './Logo'
 import { NavItem } from './MainItem/Navitem'
 import { UsedSpaceWidget } from './MainUsedSpaceWidget/UsedSpaceWidget'
 import { SearchWidget } from './MainSearchWidget/SearchWidget'
+import { Profile } from './MainProfile/Profile'
 
 export function Sidebar() {
   return (
@@ -40,6 +40,10 @@ export function Sidebar() {
         </nav>
 
         <UsedSpaceWidget />
+
+        <div className="h-px bg-slate-100"> </div>
+
+        <Profile />
       </div>
     </aside>
   )
