@@ -9,18 +9,25 @@ import {
   Users,
   LifeBuoy,
   Cog,
+  Search,
 } from 'lucide-react'
 import { Logo } from './Logo'
 import { NavItem } from './MainItem/Navitem'
 import { UsedSpaceWidget } from './MainUsedSpaceWidget/UsedSpaceWidget'
-import { SearchWidget } from './MainSearchWidget/SearchWidget'
 import { Profile } from './MainProfile/Profile'
+import { InputControl, InputPrefix, InputRoot } from '../Input/Input'
 
 export function Sidebar() {
   return (
     <aside className="flex flex-col gap-6 border-r border-zinc-200 px-5 py-8">
       <Logo />
-      <SearchWidget />
+
+      <InputRoot>
+        <InputPrefix>
+          <Search className="h-5 w-5 text-zinc-500" />
+        </InputPrefix>
+        <InputControl placeholder="Search" />
+      </InputRoot>
 
       <nav className="space-y-0.5">
         <NavItem title="Home" icon={HomeIcon} />
@@ -41,7 +48,7 @@ export function Sidebar() {
 
         <UsedSpaceWidget />
 
-        <div className="h-px bg-slate-100"> </div>
+        <div className="h-px bg-slate-100"></div>
 
         <Profile />
       </div>
