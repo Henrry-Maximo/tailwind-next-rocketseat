@@ -1,7 +1,5 @@
 import { ComponentProps } from 'react'
 
-export interface InputProps {}
-
 // extender todas as propriedades da div para o Input
 type InputPrefixProps = ComponentProps<'div'>
 
