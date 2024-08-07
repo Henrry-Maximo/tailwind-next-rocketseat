@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@radix-ui/react-tabs": "^1.1.0",
+    "framer-motion": "^11.3.22",
     "lucide-react": "^0.417.0",
     "next": "14.2.5",
     "react": "^18",
