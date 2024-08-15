@@ -1,6 +1,12 @@
 'use client'
 
-import { ComponentProps, createContext, useContext, useId, useState } from 'react'
+import {
+  ComponentProps,
+  createContext,
+  useContext,
+  useId,
+  useState,
+} from 'react'
 
 // Root accept elements <div> / extract props of div
 export type RootProps = ComponentProps<'div'>
@@ -17,13 +23,15 @@ const FileInputContext = createContext({} as FileInputContextType)
 
 export function Root(props: RootProps) {
   // hook -> user id unique
-  const id = useId();
-  const [ files, setFiles ] = useState<File[]>([]) 
+  const id = useId()
+  // armazenar os arquivos
+  const [files, setFiles] = useState<File[]>([])
 
   // without chance of typing ´setFiles´
 
-  // disponibiliza o ID, os arquivos selecionados e a função setFiles para todos 
+  // disponibiliza o ID, os arquivos selecionados e a função setFiles para todos
   // os componentes descendentes que utilizam esse contexto.
+  // Provider -> prover as informações.
   return (
     <FileInputContext.Provider value={{ id, files, onFilesSelected: setFiles }}>
       <div {...props} />
