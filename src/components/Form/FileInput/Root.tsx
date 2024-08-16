@@ -15,7 +15,7 @@ export type RootProps = ComponentProps<'div'>
 type FileInputContextType = {
   id: string
   files: File[]
-  onFilesSelected: (files: File[]) => void
+  onFilesSelected: (files: File[], multiple: boolean) => void
 }
 
 // state of input / object null / type
@@ -27,13 +27,21 @@ export function Root(props: RootProps) {
   // armazenar os arquivos
   const [files, setFiles] = useState<File[]>([])
 
+  function onFilesSelected(files: File[], multiple: boolean) {
+    if (multiple) {
+      setFiles((state) => [...state, ...files])
+    } else {
+      setFiles(files)
+    }
+  }
+
   // without chance of typing ´setFiles´
 
   // disponibiliza o ID, os arquivos selecionados e a função setFiles para todos
   // os componentes descendentes que utilizam esse contexto.
   // Provider -> prover as informações.
   return (
-    <FileInputContext.Provider value={{ id, files, onFilesSelected: setFiles }}>
+    <FileInputContext.Provider value={{ id, files, onFilesSelected }}>
       <div {...props} />
     </FileInputContext.Provider>
   )

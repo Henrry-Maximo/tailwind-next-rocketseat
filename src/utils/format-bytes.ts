@@ -9,5 +9,5 @@ export function formatBytes(bytes: number) {
     unitIndex++
   }
 
-  return `${value.toFixed(1)}${units[unitIndex]}`
+  return `${value.toFixed(1)} ${units[unitIndex]}`
 }
