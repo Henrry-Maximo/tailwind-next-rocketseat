@@ -21,15 +21,28 @@ export function Select() {
           side="bottom"
           position="popper"
           sideOffset={8}
-          className="z-10 rounded-lg border border-zinc-200 bg-white"
+          className="z-10 w-[--radix-select-trigger-width] overflow-hidden rounded-lg border border-zinc-200 bg-white"
         >
           <SelectPrimitive.Viewport>
             <SelectPrimitive.Item
               value="br"
-              className="flex items-center gap-2 px-3 py-2.5"
+              className="flex items-center justify-between gap-2 px-3 py-2.5 outline-none data-[highlighted]:bg-zinc-50"
             >
               <SelectPrimitive.ItemText className="text-black">
-                Brasil
+                Brazil
+              </SelectPrimitive.ItemText>
+
+              <SelectPrimitive.ItemIndicator>
+                <Check className="h-4 w-4 text-violet-500" />
+              </SelectPrimitive.ItemIndicator>
+            </SelectPrimitive.Item>
+
+            <SelectPrimitive.Item
+              value="us"
+              className="flex items-center justify-between gap-2 px-3 py-2.5 outline-none data-[highlighted]:bg-zinc-50"
+            >
+              <SelectPrimitive.ItemText className="text-black">
+                United States
               </SelectPrimitive.ItemText>
 
               <SelectPrimitive.ItemIndicator>
