@@ -5,6 +5,7 @@ import { Bold, Italic, Link, List, ListOrdered, Mail } from 'lucide-react'
 import { SelectItem } from '@/components/Form/Select/SelectItem'
 import { Select } from '@/components/Form/Select'
 import { Textarea } from '@/components/Form/Textarea'
+import { Button } from '@/components/Button'
 
 export default function Home() {
   return (
@@ -22,20 +23,12 @@ export default function Home() {
             </span>
           </div>
           <div className="flex items-center gap-2">
-            <button
-              type="button"
-              form=""
-              className="shadow-smborder rounded-lg border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50"
-            >
+            <Button type="button" form="" variant="outline">
               Cancel
-            </button>
-            <button
-              type="submit"
-              form="settings"
-              className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-600"
-            >
+            </Button>
+            <Button type="submit" form="settings" variant="primary">
               Save
-            </button>
+            </Button>
           </div>
         </div>
 
@@ -221,19 +214,12 @@ export default function Home() {
           </div>
 
           <div className="flex items-center justify-end gap-2 pt-5">
-            <button
-              type="button"
-              form=""
-              className="shadow-smborder rounded-lg border-zinc-300 px-4 py-2 text-sm font-semibold text-zinc-700 hover:bg-zinc-50"
-            >
+            <Button type="button" variant="outline">
               Cancel
-            </button>
-            <button
-              type="submit"
-              className="rounded-lg bg-violet-600 px-4 py-2 text-sm font-semibold text-white shadow-sm hover:bg-violet-600"
-            >
+            </Button>
+            <Button type="submit" variant="primary">
               Save
-            </button>
+            </Button>
           </div>
         </form>
       </div>
