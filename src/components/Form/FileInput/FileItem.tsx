@@ -2,17 +2,34 @@
 import { Button } from '@/components/Button'
 import { formatBytes } from '@/utils/format-bytes'
 import { CheckCircle2, Trash2, UploadCloud } from 'lucide-react'
+import { tv, VariantProps } from 'tailwind-variants'
 
-export interface FileItemProps {
+const fileItem = tv({
+  base: 'group flex items-start gap-4 rounded-lg border border-zinc-200 p-4',
+
+  variants: {
+    state: {
+      progress: '',
+      complete: '',
+      error: 'bg--25 border-error-300',
+    },
+  },
+
+  defaultVariants: {
+    state: 'progress',
+  },
+})
+
+export interface FileItemProps extends VariantProps<typeof fileItem> {
   name: string
   size: number
 }
 
-export function FileItem({ name, size }: FileItemProps) {
-  const state = 'error' as 'progress' | 'error' | 'complete'
+export function FileItem({ name, size, state }: FileItemProps) {
+  // const state = 'error' as 'progress' | 'error' | 'complete'
 
   return (
-    <div className="group flex items-start gap-4 rounded-lg border border-zinc-200 p-4">
+    <div className={fileItem({ state })}>
       <div className="rounded-full border-4 border-violet-100 bg-violet-200 p-2 text-violet-600">
         <UploadCloud className="h-4 w-4" />
       </div>
@@ -20,15 +37,15 @@ export function FileItem({ name, size }: FileItemProps) {
       {state === 'error' ? (
         <div className="flex flex-1 flex-col items-start gap-1">
           <div className="flex flex-col">
-            <span className="text-error-700 text-sm font-medium">
+            <span className="text-sm font-medium text-error-700">
               Upload failed, please try again.
             </span>
-            <span className="text-error-600 text-sm">{name}</span>
+            <span className="text-sm text-error-600">{name}</span>
           </div>
 
           <button
             type="button"
-            className="text-error-700 hover:text-error-900 text-sm font-semibold"
+            className="text-sm font-semibold text-error-700 hover:text-error-900"
           >
             Try again.
           </button>
