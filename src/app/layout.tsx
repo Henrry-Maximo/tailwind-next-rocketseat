@@ -18,9 +18,11 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body className={inter.className}>
-        <div className="grid min-h-screen grid-cols-app">
+        <div className="min-h-screen grid-cols-app lg:grid">
           <Sidebar />
-          <main className="px-4 pb-12 pt-24 lg:col-start-2">{children}</main>
+          <main className="max-w-[100vw] px-4 pb-12 pt-24 lg:col-start-2 lg:px-8 lg:pt-8">
+            {children}
+          </main>
         </div>
       </body>
     </html>
