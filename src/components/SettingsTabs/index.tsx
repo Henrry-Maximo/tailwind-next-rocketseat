@@ -62,6 +62,13 @@ export function SettingsTabs() {
               />
             </Tabs.List>
           </ScrollArea.Viewport>
+
+          <ScrollArea.Scrollbar
+            orientation="horizontal"
+            className="flex h-0.5 translate-y-1.5 touch-none select-none flex-col bg-zinc-100"
+          >
+            <ScrollArea.Thumb className="relative flex-1 rounded-lg bg-zinc-300"></ScrollArea.Thumb>
+          </ScrollArea.Scrollbar>
         </ScrollArea.Root>
       </Tabs.Root>
     </>
