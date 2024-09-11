@@ -10,10 +10,10 @@ export function Profile() {
         alt="foto de perfil"
       />
       <div className="flex flex-col truncate">
-        <span className="font semibold text-sm text-zinc-700">
+        <span className="font semibold text-sm text-zinc-700 dark:text-zinc-100">
           Henrique Maximo
         </span>
-        <span className="truncate text-sm text-zinc-500">
+        <span className="truncate text-sm text-zinc-500 dark:text-zinc-400">
           henrrylimadasilva@gmail.com
         </span>
       </div>
